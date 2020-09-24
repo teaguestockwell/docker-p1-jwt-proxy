@@ -17,6 +17,7 @@ These instructions will get you up and running on your machine.
 1. Modify the ```.env``` file to match your software 
 2. Make sure you have images built with names matching ```${APP}-frontend``` and ```${APP}-backend``` (ex. ```checkmate-frontend``` and ```checkmate-backend```)
 3. Run ```run.sh``` or ```run.cmd``` depending on your OS
+4. The frontend will be at http://localhost:8080/ and the backend will be at http://localhost:8080/${APP}-api/
 
 ## Why
 
