@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${APP}_admin_user
+      POSTGRES_PASSWORD: ${PASSWORD}
+      POSTGRES_DB: ${APP}_db
+
+  backend:
+    image: ${APP}-backend
+    environment:
+      CONNECTION_STRING: database
+      APP_DB_ADMIN_PASSWORD: ${PASSWORD}
+
+  frontend:
+    image: ${APP}-frontend
+
+  proxy:
+    image: nginx
+    ports:
+      - 8080:80
+    volumes:
+      - ./src/nginx.generated.conf:/etc/nginx/nginx.conf
