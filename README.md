@@ -19,8 +19,14 @@ These instructions will get you up and running on your machine.
 4. The frontend will be at http://localhost:8080/ and the backend will be at http://localhost:8080/${APP}-api/
 
 ## Notes
+### Authorization JWT (JSON Web Token)
 The frontend and backend will have an ```Authorization``` header that emulates Keycloaks's. This can be used for authenticating users and creating profiles.
 
+A human readable example is provided at ```src/person.json```. This is also what's injected into the request headers, so any modifications made will be passed to your applicaiton.
+
+JWT parsing examples provided at ```examples/```.
+
+###  Automated Image Building
 In the *nix version, if you supply folder paths to your frontend and backend code, it will build the images for you before running. You can leave them blank if you wish to build them yourself. In Windows you will have to build them yourself before running.
 
 ## Why
@@ -31,7 +37,7 @@ I set this up in order to make it easier for new developers to understand how th
 
 * **Brandon Swenson**- *Initial work* - [brandon.swenson](https://code.il2.dsop.io/brandon.swenson)
 
-## Notes
+## Known Issues
 * There is a difference between Centos 7's ```sed``` and MacOS's version. This can cause issues. 
 * ```run.cmd``` has limited testing, please reach out with any issues that arise.
 * ```run.cmd``` does not currently support JWT generation. Looking for help with Windows scripting.
