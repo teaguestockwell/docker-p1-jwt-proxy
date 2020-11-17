@@ -1,1 +1,4 @@
 src/nginx.generated.conf
+
+guardian-angel-api
+guardian-angel-frontend

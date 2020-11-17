@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${APP}_admin_user
+      POSTGRES_PASSWORD: ${PASSWORD}
+      POSTGRES_DB: ${APP}_db
+    ports:
+      - 5432:5432

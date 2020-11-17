@@ -15,7 +15,7 @@ fi
 if [ -n "$FRONTEND_FOLDER" ];
 then
     cd $FRONTEND_FOLDER
-    if [ $FRONTEND_FRAMEWORK == "react"]
+    if [ $FRONTEND_FRAMEWORK == "react" ];
     then
         npm run build
     fi
