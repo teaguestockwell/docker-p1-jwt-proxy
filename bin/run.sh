@@ -4,7 +4,7 @@ export $(cat .env | xargs)
 sed 's/${APP}/'"$APP"'/g' ./src/nginx.conf > ./src/nginx.generated.conf
 sed -i.bak 's/${FRONTEND_PORT}/'"$FRONTEND_PORT"'/g' ./src/nginx.generated.conf
 sed -i.bak 's/${BACKEND_PORT}/'"$BACKEND_PORT"'/g' ./src/nginx.generated.conf
-JWT=$(base64 -w 0 ./src/person.json)
+JWT=$(base64 ./src/person.json)
 sed -i.bak 's/${JWT}/'"${JWT}"'/g' ./src/nginx.generated.conf
 if [ -n "$BACKEND_FOLDER" ];
 then
