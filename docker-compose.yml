@@ -2,19 +2,20 @@ version: '3.3'
 
 services:
 
-  database:
+  PG_DATABASE:
     image: postgres
     restart: always
     environment:
-      POSTGRES_USER: ${APP}_admin_user
+      POSTGRES_USER: PG_USER
       POSTGRES_PASSWORD: ${PASSWORD}
-      POSTGRES_DB: ${APP}_db
+      POSTGRES_DB: PG_DATABASE
 
   backend:
     image: ${APP}-backend
-    environment:
-      CONNECTION_STRING: database
-      APP_DB_ADMIN_PASSWORD: ${PASSWORD}
+    environment: 
+      PG_USER: PG_USER
+      PG_DATABASE: PG_DATABASE
+      PG_PASSWORD: ${PASSWORD}
     ports:
       - 5555:5555
 
