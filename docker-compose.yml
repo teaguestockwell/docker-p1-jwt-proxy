@@ -21,7 +21,6 @@ services:
 
   frontend:
     image: ${APP}-frontend
-
   proxy:
     image: nginx
     ports:
